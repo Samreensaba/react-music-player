@@ -1,22 +1,31 @@
 import React from "react";
 import {Star, StarFill} from 'react-bootstrap-icons'
-import { addToFav, removeFromFav } from '../store/actions'
-import {connect} from 'react-redux'
+import { addToFav, removeFromFav } from "../store/actions/actions";
+import { useDispatch, useSelector} from 'react-redux'
 
-const mapStateToProps = (state) => state
+
+/* const mapStateToProps = (state) => state
 
 const mapDispatchToProps = (dispatch)=> ({
   addToFavourites: (song) =>dispatch(addToFav(song)),
   removeFromFavourites: (song) =>dispatch(removeFromFav(song))
-})
+}) */
+
+
 
 const Song = ({ track, favourites, addToFavourites, removeFromFavourites }) => {
+
+  const songs = useSelector((state)=>
+    state.favourites
+  )
+
+  const dispatch = useDispatch()
   
-  const isFav = favourites.includes(song)
+  const isFav = songs.includes(track.title)
   const toggleFavourite =()=> {
   isFav
-  ? removeFromFavourites(song) 
-  : addToFavourites(song)
+  ? dispatch(removeFromFav(track.title))
+  : dispatch(addToFav(track.title))
 }
 
   return(
@@ -40,4 +49,4 @@ const Song = ({ track, favourites, addToFavourites, removeFromFavourites }) => {
 );
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Song)
+export default Song

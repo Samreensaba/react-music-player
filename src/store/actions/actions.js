@@ -4,6 +4,6 @@ export const addToFav = (song)=>({
 })
 
 export const removeFromFav = (song)=>({
-    type: 'REMOVE_From_FAVOURITE',
+    type: 'REMOVE_FROM_FAVOURITE',
     payload: song
 })

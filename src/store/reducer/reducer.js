@@ -9,12 +9,12 @@ export default function mainReducer(state = initialState, action){
         case 'ADD_TO_FAVOURITE':
         return{
             ...state,
-            favourites:[state.favourites, payload]
+            favourites:[...state.favourites, payload]
         }
         case 'REMOVE_FROM_FAVOURITE':
             return{
                 ...state,
-                favourites:state.favourites.filter(company=> company !== payload)
+                favourites:state.favourites.filter(song=> song!== payload)
             }
             default:
                 return state

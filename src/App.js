@@ -8,8 +8,8 @@ import { Row } from "react-bootstrap";
 import Artist from "./components/Artist";
 import Album from "./components/Album";
 import { useState } from "react";
-import store from './store'
-import {Provider} from 'react-redux'
+
+
 
 let headers = new Headers({
   "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
@@ -43,7 +43,7 @@ function App() {
     }
   };
   return (
-    <Provider store = {store}>
+    
     <Router>
       <div className="container-fluid">
         <Row>
@@ -61,7 +61,7 @@ function App() {
       </div>
       <Player />
     </Router>
-    </Provider>
+    
   );
 }
 
