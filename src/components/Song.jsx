@@ -13,7 +13,7 @@ const mapDispatchToProps = (dispatch)=> ({
 
 
 
-const Song = ({ track, favourites, addToFavourites, removeFromFavourites }) => {
+const Song = ({ track}) => {
 
   const songs = useSelector((state)=>
     state.favourites
