@@ -45,7 +45,7 @@ const Sidebar = ({ search }) => {
                     Library
                   </Link>
                 </li>
-                {/* {location === "/" && ( */}
+                {location === "/" && (
                   <li>
                     <div className="input-group mt-3">
                       <input
@@ -74,7 +74,7 @@ const Sidebar = ({ search }) => {
                       </div>
                     </div>
                   </li>
-                {/* )} */}
+                )}
               </ul>
             </div>
           </div>
